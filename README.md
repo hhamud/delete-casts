@@ -20,8 +20,6 @@ Terminal UI for bulk deleting Farcaster activity over the public HTTP hub.
 ## Install
 
 ```bash
-git clone <repo>
-cd delete-casts
 bun install
 ```
 
@@ -66,6 +64,7 @@ bun run cron
 ```
 
 `bun run dry-run` fetches activity and prints the counts without submitting deletions. `bun run cron` runs non-interactively and deletes everything it fetched.
+That makes the project safe to run from a cron job without the interactive Ink UI.
 
 ## Cron
 
