@@ -58,6 +58,24 @@ bun start
 
 The UI fetches your activity, shows a confirmation screen, then deletes everything in sequence.
 
+For unattended runs:
+
+```bash
+bun run dry-run
+bun run cron
+```
+
+`bun run dry-run` fetches activity and prints the counts without submitting deletions. `bun run cron` runs non-interactively and deletes everything it fetched.
+
+## Cron
+
+Example Sunday-midnight cron entry:
+
+```cron
+CRON_TZ=Europe/London
+0 0 * * 0 cd /home/hamza/projects/delete-casts && /home/hamza/.bun/bin/bun run cron >> /home/hamza/projects/delete-casts/cron.log 2>&1
+```
+
 ## Test
 
 ```bash
