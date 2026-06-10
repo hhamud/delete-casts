@@ -66,14 +66,6 @@ bun run cron
 `bun run dry-run` fetches activity and prints the counts without submitting deletions. `bun run cron` runs non-interactively and deletes everything it fetched.
 That makes the project safe to run from a cron job without the interactive Ink UI.
 
-## Cron
-
-Example Sunday-midnight cron entry:
-
-```cron
-CRON_TZ=Europe/London
-0 0 * * 0 cd /home/hamza/projects/delete-casts && /home/hamza/.bun/bin/bun run cron >> /home/hamza/projects/delete-casts/cron.log 2>&1
-```
 
 ## Test
 
